@@ -59,6 +59,7 @@ while True:
                 response = requests.post(api_url, files=file)
                 print('Status Code:', response.status_code)
                 print('Response Data:', response.json())  
+                
             except requests.exceptions.RequestException as e:
                 print('Error:', e)
                 #return None
