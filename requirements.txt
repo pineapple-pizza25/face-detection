@@ -3,3 +3,5 @@ pathlib
 requests
 pillow
 numpy 
+picamera2
+libcamera
