@@ -6,7 +6,6 @@ import io
 import PIL.Image as Image
 import numpy as np
 from picamera2 import Picamera2
-from libcamera import controls
 
 API_URL = 'https://facial-recognition-api.calmwave-03f9df68.southafricanorth.azurecontainerapps.io/facialrecognition'
 CASCADE_PATH = cv2.data.haarcascades + 'haarcascade_frontalface_default.xml'
@@ -21,9 +20,6 @@ def initialize_camera():
         buffer_count=2
     )
     picam2.configure(preview_config)
-    
-    # Set autofocus to continuous
-    picam2.set_controls({"AfMode": controls.AfModeEnum.Continuous})
     
     picam2.start()
     time.sleep(2)  # Give camera time to warm up
