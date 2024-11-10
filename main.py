@@ -10,7 +10,7 @@ api_url = 'https://facial-recognition-api.calmwave-03f9df68.southafricanorth.azu
 
 clf = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
 
-camera = cv2.VideoCapture(0)
+camera = cv2.VideoCapture(1)
 
 if not camera.isOpened():
     print("Error: Could not open camera.")
