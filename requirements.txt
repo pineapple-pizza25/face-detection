@@ -1,0 +1,5 @@
+opencv-python
+pathlib
+requests
+pillow
+numpy 

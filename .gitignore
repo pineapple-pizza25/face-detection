@@ -1,0 +1,50 @@
+env/
+__pycache__/
+*.py[cod]
+*$py.class
+
+*.so
+
+.Python
+env/
+venv/
+ENV/
+*.egg-info/
+*.egg
+*.wheel
+dist/
+build/
+*.pyc
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# Pytest / Coverage reports
+htmlcov/
+.tox/
+.coverage
+coverage.xml
+*.cover
+*.py,cover
+
+# Virtual environment
+.env/
+.env/
+env/
+
+# Logs and local files
+*.log
+*.pot
+*.log
+*.sqlite3
+
+# mypy
+.mypy_cache/
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Mac and Windows system files
+.DS_Store
+Thumbs.db

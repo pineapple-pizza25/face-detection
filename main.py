@@ -6,13 +6,18 @@ import io
 import PIL.Image as Image
 import numpy as np
 
-api_url = 'http://127.0.0.1:8000/verifyface'
+api_url = 'https://facial-recognition-api.calmwave-03f9df68.southafricanorth.azurecontainerapps.io/facialrecognition'
 
-cascade_path = pathlib.Path(cv2.__file__).parent.absolute() / "data/haarcascade_frontalface_default.xml"
-
-clf = cv2.CascadeClassifier(str(cascade_path))
+clf = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
 
 camera = cv2.VideoCapture(0)
+
+if not camera.isOpened():
+    print("Error: Could not open camera.")
+    exit()
+
+camera.set(cv2.CAP_PROP_FRAME_WIDTH, 320)
+camera.set(cv2.CAP_PROP_FRAME_HEIGHT, 240)
 
 face_detected = False
 
@@ -21,7 +26,7 @@ while True:
     gray= cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
     faces = clf.detectMultiScale(
         gray,
-        scaleFactor=1.1,
+        scaleFactor=1.3,
         minNeighbors = 10,
         minSize = (370,370) ,
         flags = cv2.CASCADE_SCALE_IMAGE
