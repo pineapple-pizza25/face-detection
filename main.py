@@ -39,7 +39,7 @@ while True:
 
         cv2.destroyWindow("video")
 
-        cv2.imshow("image", image)
+        #cv2.imshow("image", image)
         cv2.waitKey(1) 
         time.sleep(6)
         cv2.destroyWindow("image")
@@ -70,12 +70,11 @@ while True:
         faces = []        
     else:
         face_detected = False
-        cv2.imshow("video", frame)
+        #cv2.imshow("video", frame)
 
 
     if cv2.waitKey(1) == ord("q"):
         break
 
-#cv2.imshow("faces", frame)
 
 cv2.destroyAllWindows()
